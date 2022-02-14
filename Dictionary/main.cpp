@@ -6,13 +6,7 @@
 
 int main()
 {
-    Dictionary<const char*, int> m_dictionary;
 
-    m_dictionary.addItem("First", 15);
-
-    int test;
-    m_dictionary.tryGetValue("First", test);
-    std::cout << test;
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
