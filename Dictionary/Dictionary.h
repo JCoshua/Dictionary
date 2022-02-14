@@ -64,7 +64,7 @@ public:
 	int getCount() const;
 
 	const Dictionary<TKey, TValue>& operator =(const Dictionary<TKey, TValue> other);
-	TValue operator [](const TKey key);
+	TValue operator [](const TKey& key);
 
 private:
 	struct Item
@@ -91,7 +91,7 @@ inline void Dictionary<TKey, TValue>::clear()
 {
 	//Changes all of the items in the Dictionary to be nullptr
 	for (int i = 0; i < m_count; i++)
-		m_items[i] = nullptr;
+		m_items[i] = NULL;
 
 	m_count = 0;
 }
@@ -119,15 +119,16 @@ inline bool Dictionary<TKey, TValue>::containsValue(const TValue object) const
 template<typename TKey, typename TValue>
 inline bool Dictionary<TKey, TValue>::tryGetValue(const TKey key, TValue& value) const
 {
+	bool returnValue = false;
 	//Iterrates through the dictionary to find the key given
 	for (int i = 0; i < m_count; i++)
 		if (m_items[i].itemKey == key)
 		{
 			//Makes the value equal to the value of the item found by the key
 			value = m_items[i].itemValue;
-			return true;
+			returnValue = true;
 		}
-	return false;
+	return returnValue;
 }
 
 template<typename TKey, typename TValue>
@@ -235,7 +236,7 @@ inline const Dictionary<TKey, TValue>& Dictionary<TKey, TValue>::operator=(const
 }
 
 template<typename TKey, typename TValue>
-inline TValue Dictionary<TKey, TValue>::operator[](const TKey key)
+inline TValue Dictionary<TKey, TValue>::operator[](const TKey& key)
 {
 	TValue returnValue;
 	tryGetValue(key, returnValue);
