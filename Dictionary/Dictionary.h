@@ -89,10 +89,7 @@ inline Dictionary<TKey, TValue>::Dictionary(const Dictionary<TKey, TValue>& othe
 template<typename TKey, typename TValue>
 inline void Dictionary<TKey, TValue>::clear()
 {
-	//Changes all of the items in the Dictionary to be nullptr
-	for (int i = 0; i < m_count; i++)
-		m_items[i] = NULL;
-
+	m_items = nullptr;
 	m_count = 0;
 }
 
@@ -204,7 +201,7 @@ inline bool Dictionary<TKey, TValue>::remove(const TKey key, TValue& value)
 	{
 		if (m_items[i].itemKey != key)
 		{
-			tempArray[i] = m_items[j];
+			tempArray[j] = m_items[i];
 			j++;
 		}
 		else
