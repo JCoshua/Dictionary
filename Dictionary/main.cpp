@@ -6,7 +6,62 @@
 
 int main()
 {
+	Dictionary<const char*, int> dictionary;
 
+	dictionary.addItem("First", 10);
+	dictionary.addItem("Second", 25);
+
+	int displayValue;
+
+	dictionary.tryGetValue("First", displayValue);
+	std::cout << displayValue << std::endl;
+
+	dictionary.tryGetValue("Second", displayValue);
+	std::cout << displayValue << std::endl;
+	system("pause");
+	system("cls");
+
+	dictionary.remove("Second");
+	dictionary.addItem("First", 75);
+	dictionary.addItem("Second", 75);
+	dictionary.addItem("Third", 75);
+
+
+	dictionary.tryGetValue("First", displayValue);
+	std::cout << displayValue << std::endl;
+
+	dictionary.tryGetValue("Second", displayValue);
+	std::cout << displayValue << std::endl;
+
+	dictionary.tryGetValue("Third", displayValue);
+	std::cout << displayValue << std::endl;
+	system("pause");
+	system("cls");
+
+	dictionary.clear();
+
+	dictionary.addItem("First", -12);
+	dictionary.addItem("Second", 0);
+	dictionary.addItem("Third", 12);
+	dictionary.addItem("First", 0);
+
+
+	dictionary.tryGetValue("First", displayValue);
+	std::cout << displayValue << std::endl;
+
+	dictionary.tryGetValue("Second", displayValue);
+	std::cout << displayValue << std::endl;
+
+	dictionary.remove("Third", displayValue);
+	std::cout << displayValue << std::endl;
+	system("pause");
+	system("cls");
+
+	dictionary.clear();
+	displayValue = 0;
+
+	dictionary.tryGetValue("First", displayValue);
+	std::cout << displayValue << std::endl;
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu

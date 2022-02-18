@@ -1,2 +1,4 @@
 ﻿  main.cpp
+C:\Users\s218044\source\repos\Dictionary\Dictionary\Dictionary.h(184): warning C4715: 'Dictionary<char const *,int>::remove': not all control paths return a value
+C:\Users\s218044\source\repos\Dictionary\Dictionary\Dictionary.h(221): warning C4715: 'Dictionary<char const *,int>::remove': not all control paths return a value
   Dictionary.vcxproj -> C:\Users\s218044\source\repos\Dictionary\Debug\Dictionary.exe
