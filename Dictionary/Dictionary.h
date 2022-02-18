@@ -80,6 +80,7 @@ private:
 template<typename TKey, typename TValue>
 inline Dictionary<TKey, TValue>::Dictionary(const Dictionary<TKey, TValue>& other)
 {
+	//Copies the items from the other list into the newly created list
 	for (int i = 0; i < other.m_count; i++)
 		m_items[i] = other.m_items[i];
 
@@ -175,7 +176,7 @@ inline bool Dictionary<TKey, TValue>::remove(const TKey key)
 			itemRemoved = true;
 	}
 
-	//If the Item was removed, make the new array the current array
+	//If the item was removed, make the new array the current array
 	if (itemRemoved)
 	{
 		m_items = tempArray;
